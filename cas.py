@@ -78,7 +78,9 @@ class CASClientBase(object):
     def get_proxy_url(self, pgt):
         """Returns proxy url, given the proxy granting ticket"""
         params = urllib_parse.urlencode({'pgt': pgt, 'targetService': self.service_url})
-        return "%s/proxy?%s" % (self.server_url, params)
+        base_url = urllib_parse.urljoin(self.server_url, 'proxy')
+        url = base_url + '?' + params
+        return url
 
     def get_proxy_ticket(self, pgt):
         """Returns proxy ticket given the proxy granting ticket"""
