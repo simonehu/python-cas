@@ -23,6 +23,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
     ],
     install_requires=[
+        'lxml',
         'six',
     ],
     description='Python CAS client library',
