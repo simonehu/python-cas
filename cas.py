@@ -75,16 +75,16 @@ class CASClientBase(object):
             url += '?' + urllib_parse.urlencode(params)
         return url
 
-    def get_proxy_url(self, pgt):
+    def get_proxy_url(self, pgt, service):
         """Returns proxy url, given the proxy granting ticket"""
-        params = urllib_parse.urlencode({'pgt': pgt, 'targetService': self.service_url})
+        params = urllib_parse.urlencode({'pgt': pgt, 'targetService': service})
         base_url = urllib_parse.urljoin(self.server_url, 'proxy')
         url = base_url + '?' + params
         return url
 
-    def get_proxy_ticket(self, pgt):
+    def get_proxy_ticket(self, pgt, service):
         """Returns proxy ticket given the proxy granting ticket"""
-        response = urllib_request.urlopen(self.get_proxy_url(pgt))
+        response = urllib_request.urlopen(self.get_proxy_url(pgt, service))
         if response.code == 200:
             from lxml import etree
             root = etree.fromstring(response.read())
