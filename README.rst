@@ -84,6 +84,7 @@ Credits
 * `Édouard Lopez`_.
 * `Guillaume Vincent`_.
 * `Evgeny Fadeev`_.
+* `Simone Hu`_.
 
 References
 ----------
@@ -113,3 +114,4 @@ References
 .. _Édouard Lopez: https://github.com/edouard-lopez
 .. _Guillaume Vincent: https://github.com/guillaumevincent
 .. _Evgeny Fadeev: https://github.com/evgenyfadeev
+.. _Simone Hu: https://github.com/simonehu
