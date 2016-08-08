@@ -95,7 +95,7 @@ class CASClientBase(object):
             if len(tickets) == 1:
                 return tickets[0].text
             errors = root.xpath(
-                "//cas:authenticationFailure",
+                "//cas:authenticationFailure | //cas:proxyFailure",
                 namespaces={"cas": "http://www.yale.edu/tp/cas"}
             )
             if len(errors) == 1:
